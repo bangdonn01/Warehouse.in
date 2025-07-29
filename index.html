@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitung Jumlah PCS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f0f8ff;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Hitung Total PCS</h2>
+    <label for="karton">Jumlah Karton:</label>
+    <input type="number" id="karton" placeholder="Contoh: 10" oninput="hitungPCS()">
+
+    <label for="isi">Isi per Karton:</label>
+    <input type="number" id="isi" placeholder="Contoh: 12" oninput="hitungPCS()">
+
+    <div class="result" id="hasil">Total PCS: 0</div>
+  </div>
+
+  <script>
+    function hitungPCS() {
+      const karton = parseInt(document.getElementById("karton").value) || 0;
+      const isi = parseInt(document.getElementById("isi").value) || 0;
+      const total = karton * isi;
+      document.getElementById("hasil").textContent = "Total PCS: " + total;
+    }
+  </script>
+
+</body>
+</html>
